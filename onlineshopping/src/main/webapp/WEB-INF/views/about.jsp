@@ -21,7 +21,7 @@
                             WHAT DRIVES US
                         </h2>
                         <h3>
-                            Lorem ipsum - dolor
+                            The 
                         </h3>
                         <div class="col-md-8 col-md-offset-2">
                             <div class="red-border">
