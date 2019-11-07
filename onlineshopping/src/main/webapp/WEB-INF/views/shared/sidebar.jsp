@@ -1,4 +1,4 @@
-<p style="bgcolor:black;" class="lead p-3 mb-2 bg-dark text-white">SportMart</p>
+<p style="bgcolor:black; text-align: center; padding-top: 3px" class="lead p-3 mb-2 bg-dark text-white">Bizz Electronics</p>
 
 
 
