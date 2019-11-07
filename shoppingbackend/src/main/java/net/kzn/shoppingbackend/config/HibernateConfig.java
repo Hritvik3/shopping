@@ -20,11 +20,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig {
 
 	// Change the below based on the DBMS you choose
-	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/fashionMarket";
+	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/onlineshop";
 	private final static String DATABASE_DRIVER = "org.h2.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect";
-	private final static String DATABASE_USERNAME = "aa";
-	private final static String DATABASE_PASSWORD = "aa";
+	private final static String DATABASE_USERNAME = "sa";
+	private final static String DATABASE_PASSWORD = "";
 	
 	// dataSource bean will be available
 	@Bean("dataSource")
