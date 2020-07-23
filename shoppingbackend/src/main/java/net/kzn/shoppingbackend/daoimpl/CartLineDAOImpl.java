@@ -19,7 +19,6 @@ public class CartLineDAOImpl implements CartLineDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	@Override
 	public CartLine getByCartAndProduct(int cartId, int productId) {
 		String query = "FROM CartLine WHERE cartId = :cartId AND product.id = :productId";
 		try {
@@ -36,7 +35,6 @@ public class CartLineDAOImpl implements CartLineDAO {
 		
 	}
 
-	@Override
 	public boolean add(CartLine cartLine) {
 		try {
 			sessionFactory.getCurrentSession().persist(cartLine);
@@ -48,7 +46,6 @@ public class CartLineDAOImpl implements CartLineDAO {
 		}
 	}
 
-	@Override
 	public boolean update(CartLine cartLine) {
 		try {
 			sessionFactory.getCurrentSession().update(cartLine);
@@ -60,7 +57,6 @@ public class CartLineDAOImpl implements CartLineDAO {
 		}
 	}
 
-	@Override
 	public boolean remove(CartLine cartLine) {	
 		try {			
 			sessionFactory.getCurrentSession().delete(cartLine);
@@ -71,7 +67,6 @@ public class CartLineDAOImpl implements CartLineDAO {
 	}
 
 
-	@Override
 	public List<CartLine> list(int cartId) {
 		String query = "FROM CartLine WHERE cartId = :cartId";
 		return sessionFactory.getCurrentSession()
@@ -80,12 +75,10 @@ public class CartLineDAOImpl implements CartLineDAO {
 										.getResultList();		
 	}
 
-	@Override
 	public CartLine get(int id) {		
 		return sessionFactory.getCurrentSession().get(CartLine.class, Integer.valueOf(id));
 	}
 
-	@Override
 	public boolean updateCart(Cart cart) {
 		try {			
 			sessionFactory.getCurrentSession().update(cart);			
@@ -96,7 +89,6 @@ public class CartLineDAOImpl implements CartLineDAO {
 		}
 	}
 
-	@Override
 	public List<CartLine> listAvailable(int cartId) {
 		String query = "FROM CartLine WHERE cartId = :cartId AND available = :available";
 		return sessionFactory.getCurrentSession()
@@ -106,7 +98,6 @@ public class CartLineDAOImpl implements CartLineDAO {
 										.getResultList();
 	}
 
-	@Override
 	public boolean addOrderDetail(OrderDetail orderDetail) {
 		try {			
 			sessionFactory.getCurrentSession().persist(orderDetail);			

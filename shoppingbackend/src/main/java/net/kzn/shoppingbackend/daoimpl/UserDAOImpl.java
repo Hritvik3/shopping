@@ -19,7 +19,7 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
+	
 	public User getByEmail(String email) {
 		String selectQuery = "FROM User WHERE email = :email";
 		try {
@@ -35,7 +35,7 @@ public class UserDAOImpl implements UserDAO {
 							
 	}
 
-	@Override
+	
 	public boolean add(User user) {
 		try {			
 			sessionFactory.getCurrentSession().persist(user);			
@@ -46,7 +46,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-	@Override
+	
 	public boolean addAddress(Address address) {
 		try {			
 			// will look for this code later and why we need to change it
@@ -58,7 +58,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 	
-	@Override
+	
 	public boolean updateAddress(Address address) {
 		try {			
 			sessionFactory.getCurrentSession().update(address);			
@@ -70,7 +70,7 @@ public class UserDAOImpl implements UserDAO {
 	}	
 	
 
-	@Override
+	
 	public List<Address> listShippingAddresses(int userId) {
 		String selectQuery = "FROM Address WHERE userId = :userId AND shipping = :isShipping ORDER BY id DESC";
 		return sessionFactory
@@ -82,7 +82,7 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
-	@Override
+	
 	public Address getBillingAddress(int userId) {
 		String selectQuery = "FROM Address WHERE userId = :userId AND billing = :isBilling";
 		try{
@@ -98,7 +98,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-	@Override
+	
 	public User get(int id) {
 		try {			
 			return sessionFactory.getCurrentSession().get(User.class, id);			
@@ -109,7 +109,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-	@Override
+	
 	public Address getAddress(int addressId) {
 		try {			
 			return sessionFactory.getCurrentSession().get(Address.class, addressId);			

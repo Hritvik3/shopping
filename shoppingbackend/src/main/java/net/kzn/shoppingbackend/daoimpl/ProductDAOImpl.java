@@ -22,7 +22,7 @@ public class ProductDAOImpl implements ProductDAO {
 	 * SINGLE
 	 * */
 	
-	@Override
+	
 	public Product get(int productId) {
 		try {			
 			return sessionFactory
@@ -39,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO {
 	 * LIST
 	 * */
 	
-	@Override
+	
 	public List<Product> list() {
 		return sessionFactory
 				.getCurrentSession()
@@ -50,7 +50,7 @@ public class ProductDAOImpl implements ProductDAO {
 	/*
 	 * INSERT
 	 * */
-	@Override
+	
 	public boolean add(Product product) {
 		try {			
 			sessionFactory
@@ -67,7 +67,7 @@ public class ProductDAOImpl implements ProductDAO {
 	/*
 	 * UPDATE
 	 * */
-	@Override
+	
 	public boolean update(Product product) {
 		try {			
 			sessionFactory
@@ -85,7 +85,6 @@ public class ProductDAOImpl implements ProductDAO {
 	/*
 	 * DELETE
 	 * */
-	@Override
 	public boolean delete(Product product) {
 		try {
 			
@@ -99,7 +98,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return false;			
 	}
 
-	@Override
+	
 	public List<Product> listActiveProducts() {
 		String selectActiveProducts = "FROM Product WHERE active = :active";
 		return sessionFactory
@@ -109,7 +108,7 @@ public class ProductDAOImpl implements ProductDAO {
 							.getResultList();
 	}
 
-	@Override
+	
 	public List<Product> listActiveProductsByCategory(int categoryId) {
 		String selectActiveProductsByCategory = "FROM Product WHERE active = :active AND categoryId = :categoryId";
 		return sessionFactory
@@ -120,7 +119,7 @@ public class ProductDAOImpl implements ProductDAO {
 							.getResultList();
 	}
 
-	@Override
+	
 	public List<Product> getLatestActiveProducts(int count) {
 		return sessionFactory
 				.getCurrentSession()
@@ -131,7 +130,7 @@ public class ProductDAOImpl implements ProductDAO {
 								.getResultList();					
 	}
 
-	@Override
+	
 	public List<Product> getProductsByParam(String param, int count) {
 		
 		String query = "FROM Product WHERE active = true ORDER BY " + param + " DESC";

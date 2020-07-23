@@ -38,7 +38,7 @@ public class OrderDetail implements Serializable {
 	@ManyToOne
 	private Address billing;
 	@OneToMany(mappedBy="orderDetail", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<OrderItem> orderItems = new ArrayList<>();
+	private List<OrderItem> orderItems = new ArrayList();
 	
 	@Column(name = "order_count")
 	private int orderCount;
